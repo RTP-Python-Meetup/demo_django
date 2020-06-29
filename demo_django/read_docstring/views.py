@@ -1,5 +1,7 @@
-from django.http import HttpResponse
+from django.views.generic.base import TemplateView
 
-def index(request):
 
-        return HttpResponse("Hello, world. You're at the Read Docstring index.")
+class MainView(TemplateView):
+
+    template_name = "read_docstring_main.html"
+
