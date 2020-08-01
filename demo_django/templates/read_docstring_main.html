@@ -9,6 +9,10 @@ Hello, world. You're at the read docstring index.
 <br /><br />
 the value of foo is "{{ foo }}"<br /><br />
 
-{{ form.as_p }}
+<form action="{% url 'read_docstring_main' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Submit">
+</form>
 </body>
 </html>
