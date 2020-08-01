@@ -28,7 +28,11 @@ class MainView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['foo'] = 'bar'
+
+        # Use the self.file_form if it's been set, otherwise initialize an empty one.
         context['form'] = self.file_form or FileForm()
+
+        # Indicate "New" file, or the if of the file in self.file if it's set.
         if self.file is None:
             context['file_id'] = 'New'
         else:
